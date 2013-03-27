@@ -8,4 +8,4 @@ if ! grep -q "^/usr/local/bin/zsh$" /etc/shells; then
 fi
 
 # change the current user's default shell
-sudo chsh -s "/usr/local/bin/zsh" $(whoami)
+sudo chsh -s "/usr/local/bin/zsh" $(whoami) 1>/dev/null 2>/dev/null
