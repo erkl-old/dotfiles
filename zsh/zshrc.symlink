@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+export DOTFILES="$HOME/.dotfiles"
+
+# source *.rc files in other modules
+for file in $(find $DOTFILES/*/*.rc 2>/dev/null); do
+  source "$file"
+done
+
+# initialize autocomplete
+autoload -U compinit
+compinit
