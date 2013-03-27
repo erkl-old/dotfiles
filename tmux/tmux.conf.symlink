@@ -1,0 +1,38 @@
+# 256 colors
+set -g default-terminal "screen-256color"
+
+# stick with the default for now
+set-option -g prefix C-b
+
+# more convenient window movement
+bind-key C-b last-window
+bind-key C-n next-window
+bind-key C-p previous-window
+
+# windows and panes should be 1-indexed, because the 0 key
+# is not as easy to reach
+set -g base-index 1
+setw -g pane-base-index 1
+
+# vi-like controls
+bind -r C-h select-pane -L
+bind -r C-j select-pane -D
+bind -r C-k select-pane -U
+bind -r C-l select-pane -R
+
+bind -r < resize-pane -L 1
+bind -r > resize-pane -R 1
+bind -r - resize-pane -D 1
+bind -r + resize-pane -U 1
+
+setw -g mode-keys vi
+
+# unbind the arrow keys (used for pane movement by default)
+unbind Left
+unbind Down
+unbind Up
+unbind Right
+
+# toggle pane input synchronization
+bind e setw synchronize-panes on
+bind E setw synchronize-panes off
