@@ -12,10 +12,10 @@ if ! brew --version 2>&1 1>/dev/null; then
   ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
   brew doctor
 
-  # make sure executables in /usr/local/bin are found before
-  # the system defaults
-  OTHER=$(grep -v "/usr/local/bin" "/etc/paths")
-  sudo sh -c "printf \"/usr/local/bin\n$OTHER\n\" > \"/etc/paths\""
+  # make sure homebrew executables are found before the system defaults
+  BIN="$(brew --prefix)/bin"
+  PATHS=$(grep -v "$BIN" /etc/paths)
+  sudo sh -c "printf \"$BIN\n$PATHS\n\" > /etc/paths"
 fi
 
 # upgrade homebrew formulae
