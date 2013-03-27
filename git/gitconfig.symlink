@@ -1,0 +1,40 @@
+[alias]
+	ap = add -p
+	cm = commit -m
+	ca = commit --amend --no-edit
+	ds = diff --staged
+	dh = diff HEAD..HEAD^
+	un = !git reset --soft HEAD^
+	co = checkout -B
+
+[user]
+	name  = ...
+	email = ...
+
+[core]
+	excludesfile = ~/.gitignore
+	whitespace   = trailing-space,space-before-tab
+
+[diff]
+	renames = copies
+
+[merge]
+	stat = true
+	log  = true
+
+[push]
+	default = simple
+
+[color]
+	diff   = auto
+	status = auto
+	branch = auto
+	ui     = auto
+
+[advice]
+	pushNonFastForward = false
+	statusHints        = false
+	commitBeforeMerge  = false
+	resolveConflict    = false
+	implicitIdentity   = false
+	detachedHead       = false
