@@ -7,3 +7,6 @@ sudo dscl . -append "/Groups/wheel" GroupMembership `whoami`
 sudo mkdir -p "/usr/local"
 sudo chown root:wheel "/usr/local"
 sudo chmod ug=rwx,o=rx "/usr/local"
+
+# update GUI preferences
+sh $DOTFILES/osx/preferences.sh
