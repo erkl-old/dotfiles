@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 
-brew install --disable-etcdir zsh
+if ! brew list zsh > /dev/null 2>&1; then
+  brew install --disable-etcdir zsh
+fi
 
 # make sure homebrew's zsh is registered as a valid shell
 if ! grep -q "^/usr/local/bin/zsh$" /etc/shells; then

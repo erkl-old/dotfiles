@@ -1,3 +1,5 @@
 #!/usr/bin/env sh
 
-brew install tmux
+if ! brew list tmux > /dev/null 2>&1; then
+  brew install tmux
+fi

@@ -1,3 +1,5 @@
 #!/usr/bin/env sh
 
-brew install git
+if ! brew list git > /dev/null 2>&1; then
+  brew install git
+fi
