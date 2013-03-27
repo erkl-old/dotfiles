@@ -8,8 +8,8 @@
 	co = checkout -B
 
 [user]
-	name  = ?
-	email = ?
+	# name  = John Doe
+	# email = john.doe@example.com
 
 [core]
 	excludesfile = ~/.gitignore
