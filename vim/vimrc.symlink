@@ -1,0 +1,51 @@
+set nocompatible
+set noerrorbells
+set novisualbell
+set encoding=utf8
+set autoread
+set number
+set ruler
+set cursorline
+set nowrap
+set backspace=2
+set so=8
+
+set softtabstop=4
+set shiftwidth=4
+set tabstop=4
+set smarttab
+
+" increase the usefulness of search
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" because I like to live dangerously
+set noswapfile
+set nobackup
+
+" never highlight matching brackets
+set noshowmatch
+let loaded_matchparen = 1
+
+" enable syntax highlighting and filetype-specific plugins
+syntax enable
+"filetype plugin on
+"filetype indent on
+
+" disable the arrow keys in normal mode
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+
+" strip trailing whitespace pre-save
+function! TrimWhitespace()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfun
+
+autocmd BufWritePre * :call TrimWhitespace()
