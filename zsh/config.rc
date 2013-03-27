@@ -1,0 +1,34 @@
+setopt NO_BEEP
+setopt IGNORE_EOF
+setopt INTERACTIVECOMMENTS
+setopt NO_CASE_GLOB
+setopt NUMERIC_GLOB_SORT
+
+setopt COMPLETE_ALIASES
+setopt ALWAYS_TO_END
+setopt LIST_AMBIGUOUS
+unsetopt CORRECT
+unsetopt MENU_COMPLETE
+unsetopt COMPLETE_IN_WORD
+
+setopt SHARE_HISTORY
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+
+HISTFILE=~/.zshhistory
+HISTSIZE=10000
+SAVEHIST=10000
+
+# enable emacs-style bindings
+bindkey -e
+
+export WORDCHARS='*?_[]~=&!$%^(){}'
+
+# completion of lowercase strings should be case-insensitive
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# pasted tabs shouldn't trigger completion
+zstyle ':completion:*' insert-tab pending
+
+# use the arrow-driven menu for completion selection
+zstyle ':completion:*' menu select

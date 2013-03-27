@@ -1,0 +1,25 @@
+prompt_host() {
+  if [ -n "$SSH_CLIENT" ]; then
+    echo "\033[33m%n@%m\033[0m "
+  fi
+}
+
+prompt_pwd() {
+  echo "${PWD/#$HOME/~}"
+}
+
+prompt_git() {
+  local b=$(git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
+  if [ -z "$b" ]; return
+
+  local u=$(git rev-list --full-history "origin/$b..$b" 2>/dev/null | wc -l)
+  if [ "$u" -gt "0" ]; then
+    echo " ($b\033[31m+$u\033[0m)"
+  else
+    echo " ($b)"
+  fi
+}
+
+precmd() {
+  PROMPT="$(prompt_host)$(prompt_pwd)$(prompt_git) %% "
+}
