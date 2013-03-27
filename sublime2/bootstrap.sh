@@ -8,4 +8,5 @@ rm -rf "$PACKAGES/User"
 ln -s "$DOTFILES/sublime2/packages" "$PACKAGES/User"
 
 # install the soda theme
-echo git clone git://github.com/buymeasoda/soda-theme.git "$PACKAGES/Theme - Soda"
+rm -rf "$PACKAGES/Theme - Soda"
+git clone git://github.com/buymeasoda/soda-theme.git "$PACKAGES/Theme - Soda"
