@@ -3,7 +3,7 @@
 	"color_scheme": "Packages/User/GitHub.tmTheme",
 	"draw_indent_guides": false,
 	"ensure_newline_at_eof_on_save": true,
-	"folder_exclude_pattern":
+	"folder_exclude_patterns":
 	[
 		".git",
 		".svn",
