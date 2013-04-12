@@ -3,7 +3,7 @@
 	cm = commit -m
 	ca = commit --amend --no-edit
 	ds = diff --staged
-	dh = diff HEAD..HEAD^
+	dh = diff HEAD^..HEAD
 	un = !git reset --soft HEAD^
 	co = checkout -B
 
