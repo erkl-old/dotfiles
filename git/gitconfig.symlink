@@ -1,6 +1,7 @@
 [alias]
 	ap = add -p
 	cm = commit -m
+	ed = commit --amend
 	ca = commit --amend --no-edit
 	ds = diff --staged
 	dh = diff HEAD^..HEAD
